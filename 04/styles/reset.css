@@ -15,3 +15,5 @@ a {
 ul, ol {
     list-style: none;
 }
+
+*{transition: all .1s ease-in;}
