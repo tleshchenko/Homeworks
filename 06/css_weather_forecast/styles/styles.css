@@ -1,0 +1,132 @@
+.main_section {
+    padding-top: 35px;
+    background-color: #2d779c;
+    border: #328ebd 20px solid;
+    max-width: 100%;
+    width: 1350px;
+    margin: 0 auto 35px;
+}
+
+header {
+    width: 1170px;
+    margin: 0 auto 35px;
+}
+
+.weather_table {
+    margin: 0 auto 35px
+}
+
+.header_text {
+    text-align: start;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.tiles {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1166px;
+    height: 588px;
+    font-size: 0;
+    text-align: center;
+}
+
+
+.tiles div {
+    display: inline-block;
+    font-size: 22px;
+    padding-top: 26px;
+    padding-bottom: 27px;
+    vertical-align: middle;
+    height: 25%;
+    outline: 2px solid #fff;
+
+}
+
+.w-50 {
+    width:50%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-100 {
+    width:100%;
+}
+
+
+.tiles div:nth-child(1) {
+    background-color: #3399CC;
+}
+
+.tiles div:nth-child(2) {
+    background-color: #33CCCC;
+}
+
+.tiles div:nth-child(3) {
+    background-color: #996699;
+}
+
+.tiles div:nth-child(4) {
+    background-color: #C24747;
+}
+
+.tiles div:nth-child(5) {
+    background-color: #E2674A;
+}
+
+.tiles div:nth-child(6) {
+    background-color: #FFCC66;
+}
+
+.tiles div:nth-child(7) {
+    background-color: #99CC99;
+}
+
+.tiles div:nth-child(8) {
+    background-color: #669999;
+}
+
+.tiles div:nth-child(9) {
+    background-color: #CC6699;
+}
+
+.tiles div:nth-child(10) {
+    background-color: #339966;
+}
+
+.tiles div:nth-child(11) {
+    background-color: #666699;
+}
+
+span {
+    text-transform: capitalize;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    
+}
+
+i {
+    font-size: 42px;
+    font-weight: 400;
+    position: relative;
+    bottom: -8%;
+}
+
+footer {
+    width: 1170px;
+    margin: 0 auto 119px;
+}
+
+.footer_text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    text-align: start;
+}
