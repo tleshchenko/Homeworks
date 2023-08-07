@@ -1,0 +1,14 @@
+* {
+
+    margin: 0;
+    padding: 0;
+text-decoration: none;
+list-style: none;
+     font-family: 'Farro', sans-serif;
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Staatliches', cursive;
+    font-family: 'Tourney', cursive;
+    font-family: 'PT-Sans', bold;
+    font-family: 'PT-Sans', italic;
+    font-family: 'PT-Sans', normal;
+}

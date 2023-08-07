@@ -1,0 +1,146 @@
+.container {
+    padding: 13px 120px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px
+;
+}
+
+.site_language {
+    color: #000;
+    text-align: center;
+    font-family: 'Tourney';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.88px;
+}
+
+.nav_links {
+    display: inline-flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+}
+
+.link_item {
+    color: #000;
+    font-family: 'Staatliches';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.66px;
+}
+
+.slash {
+    color: #000;
+    font-family: 'Staatliches';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.66px;
+}
+
+
+.main_section {
+    padding: 70px 120px;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    padding-bottom: 90px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+}
+
+.chapter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+
+.chapter_header {
+    color: #000;
+    font-family: 'Francois One';
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+}
+
+.sub_header {
+    position: relative;
+    top: -25px;
+    color: #000;
+    font-family: 'Farro';
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+}
+
+.chapter_text {
+    color: #000;
+    font-family: 'PT-Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.underline {
+    text-decoration-line: underline;
+    color: #000;
+    font-family: 'PT-Sans';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 48px;
+}
+
+.italic {
+    font-family: 'PT-Sans';
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.bold {
+    color: #000;
+    font-family: 'PT-Sans';
+    font-size: 28px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.bg {
+
+    color: #000;
+    font-family: 'PT-Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    background-color: rgb(212, 212, 212);
+
+}
+
+
+
