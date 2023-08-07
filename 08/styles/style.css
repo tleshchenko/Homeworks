@@ -1,3 +1,14 @@
+body {
+    font-family: 'Farro', sans-serif;
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Staatliches', cursive;
+    font-family: 'Tourney', cursive;
+    font-family: 'PT-Sans', bold;
+    font-family: 'PT-Sans', italic;
+    font-family: 'PT-Sans', normal;
+}
+
+
 .container {
     padding: 13px 120px;
     list-style: none;
@@ -13,8 +24,7 @@
 .main_nav {
     display: flex;
     justify-content: space-between;
-    gap: 50px
-;
+    gap: 50px;
 }
 
 .site_language {
