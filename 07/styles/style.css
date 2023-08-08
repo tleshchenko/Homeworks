@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Delius Unicase;
+    src: url(https://fonts.googleapis.com/css2?family=Delius+Unicase&display=swap);
+}
+
 body {
     font-family: 'Delius Unicase', cursive;
     font-family: 'Roboto', sans-serif;
@@ -29,33 +34,230 @@ h2 {
 
 .architecture_items {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 30px;
     margin-bottom: 120px;
 }
 
-.arch_img02 {
-    grid-column: span 2;
+.architecture_items div {
+    position: relative;
 }
 
-.arch_img03 {
-    grid-column: span 2;
+.download {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(224, 224, 224, 0.5);
+    position: absolute;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    top: 20px;
+    opacity: 0;
 }
 
-.arch_img06 {
-    grid-column: span 2;
+.fa-download {
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.download:hover {
+    background: rgba(224, 224, 224);
+    cursor: pointer;
+}
+
+.download:hover .fa-download {
+    opacity: 1;
+    transform: scale(1.2);
+    color: #000;
+}
+
+.like {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(224, 224, 224, 0.5);
+    position: absolute;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    top: 20px;
+    opacity: 0;
+}
+
+i {
+    font-size: 25px;
+    opacity: 0.5;
+}
+
+.like:hover {
+    background: rgba(224, 224, 224);
+    cursor: pointer;
+}
+
+.like:hover i {
+    opacity: 1;
+    transform: scale(1.2);
+    color: #ff00008a;
+}
+
+.name {
+    width: 100%;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.date {
+    color: #e0e0e0;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.architecture_items div {
+    position: relative;
+}
+
+.architecture_items div:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.architecture_items div::before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: var(--blure,
+            linear-gradient(0deg,
+                #241f24 0%,
+                rgba(91, 91, 91, 0.45) 34.11%,
+                rgba(187, 186, 192, 0.26) 62.5%));
+}
+
+.architecture_items div:hover .like {
+    opacity: 1;
+}
+
+.architecture_items div:hover .download {
+    opacity: 1;
+}
+
+.architecture_items div:hover::before {
+    display: block;
+    border-radius: 20px;
+    background: var(--hover-overlay,
+            linear-gradient(360deg,
+                #241f24 1.04%,
+                rgba(91, 91, 91, 0.26) 6.99%,
+                rgba(187, 186, 192, 0) 12.29%));
+}
+
+.arch_img:nth-child(1) {
+    grid-column: 1/2;
+}
+
+
+.arch_img:nth-child(2) {
+    grid-column: 2/4;
+}
+
+.arch_img:nth-child(3) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.arch_img:nth-child(4) {
+    grid-column: 3/4;
+}
+
+.arch_img:nth-child(5) {
+    grid-column: 1/2;
+}
+
+.arch_img:nth-child(6) {
+    grid-column: 2/4;
 }
 
 .nature_items {
     display: grid;
-    grid-template-rows: 1fr repeat(2, 1fr) 1fr; 
-    grid-template-columns:1fr repeat(2, 1fr);
+    grid-template-rows: 1fr repeat(2, 1fr) 1fr;
+    grid-template-columns: 1fr repeat(2, 1fr);
     row-gap: 30px;
     column-gap: 30px;
     margin-bottom: 120px;
 }
+
+.nature_items div {
+    position: relative;
+}
+
+.nature_items div:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.nature_items div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: var(--blure,
+            linear-gradient(0deg,
+                #241f24 0%,
+                rgba(91, 91, 91, 0.45) 34.11%,
+                rgba(187, 186, 192, 0.26) 62.5%));
+}
+
+.nature_items div:hover .like {
+    opacity: 1;
+}
+
+.nature_items div:hover::before {
+    display: block;
+    border-radius: 20px;
+    background: var(--hover-overlay,
+            linear-gradient(360deg,
+                #241f24 1.04%,
+                rgba(91, 91, 91, 0.26) 6.99%,
+                rgba(187, 186, 192, 0) 12.29%));
+}
+
+.nature_items div:hover .download {
+    opacity: 1;
+}
+
 
 .nature_img:nth-child(2) {
     grid-column: 2/span 2;
@@ -78,12 +280,57 @@ h2 {
 
 .portrait_items {
     display: grid;
-    grid-template-rows:repeat(5,1fr); 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5, 370px);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 30px;
     margin-bottom: 120px;
 }
+
+.portrait_items div {
+    position: relative;
+}
+
+.portrait_items div:hover .like {
+    opacity: 1;
+}
+
+.portrait_items div:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.portrait_items div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: var(--blure-fore-portrait,
+            linear-gradient(360deg,
+                #241f24 0%,
+                rgba(91, 91, 91, 0.45) 34.11%,
+                rgba(187, 186, 192, 0.26) 62.5%));
+}
+
+.portrait_items div:hover::before {
+    display: block;
+    border-radius: 20px;
+    background: var(--hover-overlay,
+            linear-gradient(360deg,
+                #241f24 1.04%,
+                rgba(91, 91, 91, 0.26) 6.99%,
+                rgba(187, 186, 192, 0) 12.29%));
+}
+
+.portrait_items div:hover .download {
+    opacity: 1;
+}
+
 
 .gallery_img:nth-child(1) {
     grid-column: 1/2;
