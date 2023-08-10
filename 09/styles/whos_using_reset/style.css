@@ -1,0 +1,174 @@
+body {
+    font-family: 'Farro', sans-serif;
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Staatliches', cursive;
+    font-family: 'Tourney', cursive;
+    font-family: 'PT-Sans', bold;
+    font-family: 'PT-Sans', italic;
+    font-family: 'PT-Sans', normal;
+    font-family: 'Roboto', medium;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.header_container {
+    max-width: 1200px;
+    padding: 13px 120px;
+    margin: 0 auto;
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+}
+
+.site_language {
+    color: #000;
+    text-align: center;
+    font-family: 'Tourney';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.88px;
+}
+
+.nav_links {
+    display: inline-flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+}
+
+.link_item {
+    color: #000;
+    font-family: 'Staatliches';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.66px;
+}
+
+.slash {
+    color: #000;
+    font-family: 'Staatliches';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.66px;
+}
+
+.main_wrapper {
+    max-width: 1200px;
+    padding-top: 150px;
+    margin: 0 auto;
+}
+
+.headind {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.divider {
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+}
+
+.title {
+    color: #000;
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-style: medium;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 1.44px;
+}
+
+.cards_container {
+    max-width: 1200px;
+    margin: 40px 0px 70px;
+    padding: 20px 15px;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_wrapper {
+    width: 270px;
+    height: 180px;
+
+}
+
+.cards_inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: transparent;
+    align-items: center;
+    
+    
+}
+
+.cards_inner:hover .card_front {
+    transform: rotateX(180deg);
+}
+
+.cards_inner:hover .card_back {
+    transform: rotateX(0deg);
+
+}
+
+.card_front, .card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.card_front {
+    background-color: #E6E6E6;
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+.card_back {
+    background-color: #1A1A1A;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+}
+
+.front, .back {
+    width: 200px;
+    display: flex;
+    align-self: center;
+}
+

@@ -6,14 +6,20 @@ body {
     font-family: 'PT-Sans', bold;
     font-family: 'PT-Sans', italic;
     font-family: 'PT-Sans', normal;
-    
+    font-family: 'Roboto', medium;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
 
-.container {
+.header_container {
+    max-width: 1200px;
     padding: 13px 120px;
-    list-style: none;
-    text-decoration: none;
+    margin: 0 auto;
 }
 
 .header_wrapper {
@@ -26,6 +32,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    align-items: center;
 }
 
 .site_language {
@@ -66,13 +73,64 @@ body {
     letter-spacing: 0.66px;
 }
 
+main {
+    background-image: url(../img/background.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 841px 140px;
+    background-size: 54%;
+}
 
-.main_section {
-    padding: 70px 120px;
-    list-style: none;
-    text-decoration: none;
-    display: flex;
+.page_wrapper {
+    padding-top: 140px;
     padding-bottom: 90px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+
+
+.sidebar {
+    width: 365px;
+    height: 440px;
+    padding: 10px;
+    position: sticky;
+    top: 140px;
+}
+
+.main_text {
+    display: flex;
+    width: 785px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 70px;
+
+
+}
+
+.nav_item {
+    color: #000;
+    font-family: Francois One;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BDBDBD ;
+
+
+
+
+}
+
+.nav_list {
+    display: flex;
+    width: 385px;
     flex-direction: column;
     align-items: flex-start;
     gap: 70px;
@@ -142,7 +200,6 @@ body {
 }
 
 .bg {
-
     color: #000;
     font-family: 'PT-Sans';
     font-size: 28px;
@@ -153,5 +210,9 @@ body {
 
 }
 
-
-
+.divider {
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+    margin-bottom: 20px;
+}
