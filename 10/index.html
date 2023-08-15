@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Forms</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_wrapper">
+            <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="get" target="_blank"
+                enctype="multipart/form-data" class="form">
+                <div class="section_content">
+                    <h2 class="section_header">Create an Account</h2>
+                    <div class="name_content">
+                        <div class="input_item">
+                            <label class="lbl" for="">First Name</label>
+                            <input class="input" type="text" name="name" placeholder="Enter your first name here"
+                                required>
+                        </div>
+                        <div class="input_item">
+                            <label class="lbl" for="">Last Name</label>
+                            <input class="input" type="text" name="name" placeholder="Enter your last name here"
+                                required>
+                        </div>
+                    </div>
+                    <div class="email_content">
+                        <label for="" class="lbl">E-mail</label>
+                        <input class="email_input" type="email" name="e-mail" placeholder="Enter your email here"
+                            required>
+                        <p class="subtext">We'll never share your email with anyone else.</p>
+                    </div>
+                    <div class="radio_btns">
+                        <div class="radio_male">
+                            <label for="radio_male" class="fake_radio">
+                                <input type="radio" id="radio_male" name="gender" value="male" checked
+                                    required="required">
+                            </label>
+                            <label class="lbl" for="radio_male">Male</label>
+                        </div>
+                        <div class="radio_female">
+                            <label for="radio_female" class="fake_radio">
+                                <input type="radio" name="gender" id="radio_female" value="female" checked
+                                    required="required">
+                            </label>
+                            <label class="lbl" for="radio_female">Female</label>
+                        </div>
+                    </div>
+                    <div class="location_select">
+                        <div class="country_section">
+                            <label for="select_inp" class="lbl">Country</label>
+                            <label for="country" class="cursor_pos">
+                                <div class="select_arrows">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </div>
+                                <select class="select_left" name="country" id="country" required="required">
+                                    <option>Select</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Germany">Germany</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="city_section">
+                            <div class="input_item">
+                                <label class="lbl" for="">City</label>
+                                <input class="input" type="text" name="city" placeholder="Choose your city" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="signup_button">
+                            <span class="button_text">Sign Up</span>
+                        </button>
+                    </div>
+                    <div class="terms">
+                        <p class="terms_text">
+                            By clicking the 'Sign Up' button, you confirm that you accept our
+                            <a class="terms_link" href="#">Terms of Use</a>
+                            and <a class="terms_link" href="">Privacy Policy</a>.
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="reg_links">
+                        <span class="lbl">Have an account?</span>
+                        <a class="login_link" href="#">Log In</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form_wrapper">
+            <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="get" target="_blank"
+                enctype="multipart/form-data" class="form">
+                <div class="section_content">
+                    <h2 class="section_header">Profile</h2>
+                    <div class="photo_upload">
+                        <div class="photo_img">
+                            <label class="photo_container" for="file"><img src="./img/hero.png" alt=""></label>
+                        </div>
+                        <div class="file_content">
+                            <div class="upload">
+                                <input class="input" id="file" type="file" accept="image/png image/jpg">
+                                <label class="file_label" for="file"><i class="fa-solid fa-camera"></i></label>
+                                <span class="upload_description">Up to 1 MB (300x300 px)</span>
+                            </div>
+                            <div class="delete_button">
+                                <button type="button">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_content">
+                        <div class="content_row">
+                            <div class="input_item">
+                                <label class="lbl" for="">Name</label>
+                                <input class="input" type="text" name="name" placeholder="Enter your name here"
+                                    required>
+                            </div>
+                            <div class="input_item">
+                                <label class="lbl" for="">E-mail</label>
+                                <input class="input" type="email" name="email"
+                                    placeholder="Enter your email here" required>
+                            </div>
+                        </div>
+                        <div class="content_row">
+                            <div class="location_select">
+                                <div class="country_section">
+                                    <label for="country" class="lbl">Country</label>
+                                    <label for="country" class="cursor_pos">
+                                        <div class="select_arrows">
+                                            <i class="fa-solid fa-caret-up"></i>
+                                            <i class="fa-solid fa-caret-down"></i>
+                                        </div>
+                                        <select class="select_right" name="country" id="country_2" required="required">
+                                            <option>Select</option>
+                                            <option value="Ukraine">Ukraine</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Germany">Germany</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="city_section">
+                                    <div class="input_item">
+                                        <label class="lbl" for="">City</label>
+                                        <input class="input" type="text" name="city"
+                                            placeholder="Choose your city" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_row">
+                            <div class="code_section">
+                                <div class="input_item">
+                                    <label class="lbl" for="">Zip Code</label>
+                                    <input class="input" type="text" name="zip_code" placeholder="0462"
+                                        required>
+                                </div>
+                                <div class="input_item">
+                                    <label class="lbl" for="">Phone Number</label>
+                                    <input class="input" type="number" name="phone_number"
+                                        placeholder="+380958700810" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="update_button">
+                            <span class="button_text">Update</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
