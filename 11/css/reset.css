@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', normal;
+    font-family: 'Open Sans', normal;
+    font-family: 'Roboto', normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, a, i {
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -11,6 +11,11 @@ ul, li {
     list-style: none;
 }
 
+ul {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 h1 {
     padding-top: 20px;
     padding-bottom: 50px;

@@ -81,7 +81,8 @@ input:hover {
     align-self: center;
 }
 
-.select_left, .select_right {
+.select_left,
+.select_right {
     width: 245px;
     height: 38px;
     border: 1px solid #e4e4e4;
@@ -465,9 +466,3 @@ input[type='file'] {
     box-sizing: border-box;
     border-radius: 6px;
 }
-
-
-
-
-
-
