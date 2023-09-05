@@ -2,10 +2,6 @@ $hamburger-padding-x: 20px;
 $hamburger-padding-y: 15px;
 $hamburger-types : (collapse);
 
-
-
-
-
 .container,
 .first_screen_container {
     width: 100%;
@@ -112,7 +108,7 @@ $hamburger-types : (collapse);
         z-index: 3;
         box-shadow: -10px 0px 25px -7px rgba(0, 0, 0, 0.7);
         padding-top: 130px;
-        transform: translateX(100%);
+        transform: translateX(150%);
 
         &.active {
             transform: none;
