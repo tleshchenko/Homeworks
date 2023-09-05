@@ -7,6 +7,7 @@
     <title>Manifest</title>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/main.min.css">
+    <link href="./style/hamburgers.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <div class="container">
             <div class="header_content">
                 <div class="logo_wrapper">
@@ -26,13 +27,13 @@
                 <div class="nav">
                     <ul class="nav_list">
                         <li class="nav_item">
-                            <a class="nav_item_link" href="#">home</a>
+                            <a class="nav_item_link" href="#header">home</a>
                         </li>
                         <li class="nav_item">
                             <a class="nav_item_link" href="#about">about</a>
                         </li>
                         <li class="nav_item">
-                            <a class="nav_item_link" href="">works</a>
+                            <a class="nav_item_link" href="#about">works</a>
                         </li>
                         <li class="nav_item">
                             <a class="nav_item_link" href="#blog">blog</a>
@@ -41,31 +42,45 @@
                             <a class="nav_item_link" href="#contact">contact</a>
                         </li>
                     </ul>
-                    <div class="search_button">
-                        <a class="search_button" href="">
-                            <img src="./img/search.svg" alt="">
+                    <div class="logo_wrapper_mobile">
+                        <a class="logo" href="">
+                            <img src="./img/logo.svg" alt="">
                         </a>
                     </div>
                 </div>
+                <div class="nav_buttons">
+                    <div class="search_button">
+                        <a href="">
+                            <img src="./img/search.svg" alt="">
+                        </a>
+                    </div>
+                   <div class="hamburger_wrapper">
+                    <button class="hamburger hamburger--collapse" onclick="toggleMenu(event)" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                   </div>
+                </div>
             </div>
+
+
         </div>
     </header>
     <main class="main">
         <div id="about" class="first_screen_wrapper">
-            <picture class="first_screen_image">
-                <source srcset="./img/first-page-background-phone.jpg" media="(max-width: 320px)">
-                <source srcset="./img/first-page-background-tablet.jpg" media="(max-width: 768px)">
-                <img src="./img/first-page-background.jpg " alt="">
-            </picture>
-            <h1 class="first_screen_header">Manifest is a newborn theme.
-                Clean, simple and fast.</h1>
+
+            <div class="first_screen_container">
+                <h2 class="first_screen_header">Manifest is a newborn theme. Clean, simple and fast.</h2>
+            </div>
         </div>
         <div id="blog" class="blog_section">
             <div class="container">
                 <h1 class="blog_section_header">Blog</h1>
                 <div class="article">
-                    <picture class="picture">
-                        <source srcset="./img/article_01_tablet.jpg" media="(max-width: 768px)">
+                    <picture class="article_image">
+                        <source srcset="./img/article_01_tablet.jpg" media="(max-width: 968px)">
+
                         <img src="./img/article_01.jpg" alt="">
                     </picture>
                     <div class="article_content">
@@ -77,8 +92,9 @@
                     </div>
                 </div>
                 <div class="article">
-                    <picture class="picture">
-                        <source srcset="./img/article_02_tablet.jpg" media="(max-width: 768px)">
+                    <picture class="article_image">
+                        <source srcset="./img/article_02_tablet.jpg" media="(max-width: 968px)">
+
                         <img src="./img/article_02.jpg" alt="">
                     </picture>
                     <div class="article_content">
@@ -102,7 +118,7 @@
                 <div class="articles">
                     <div class="post">
                         <picture class="post_img">
-                            <source srcset="./img/post01-tablet.jpg" media="(max-width: 768px)">
+                            <source srcset="./img/post01-tablet.jpg" media="(max-width: 968px)">
                             <img src="./img/post01-image.jpg" alt="">
                         </picture>
                         <div class="post_content">
@@ -120,7 +136,7 @@
                     </div>
                     <div class="post">
                         <picture class="post_img">
-                            <source srcset="./img/post02-tablet.jpg" media="(max-width: 768px)">
+                            <source srcset="./img/post02-tablet.jpg" media="(max-width: 968px)">
                             <img src="./img/post02-image.jpg" alt="">
                         </picture>
                         <div class="post_content">
@@ -138,7 +154,7 @@
                     </div>
                     <div class="post">
                         <picture class="post_img">
-                            <source srcset="./img/post03-tablet.jpg" media="(max-width: 768px)">
+                            <source srcset="./img/post03-tablet.jpg" media="(max-width: 968px)">
                             <img src="./img/post03-image.png" alt="">
                         </picture>
                         <div class="post_content">
@@ -167,7 +183,7 @@
                 <div class="articles">
                     <div class="post">
                         <picture class="post_img">
-                            <source srcset="./img/mp-post01-tablet.jpg" media="(max-width: 768px)">
+                            <source srcset="./img/mp-post01-tablet.jpg" media="(max-width: 968px)">
                             <img src="./img/mp-post01.jpg" alt="">
                         </picture>
                         <div class="post_heading">
@@ -184,7 +200,7 @@
                     </div>
                     <div class="post">
                         <picture class="post_img">
-                            <source srcset="./img/mp-post02-tablet.jpg" media="(max-width: 768px)">
+                            <source srcset="./img/mp-post02-tablet.jpg" media="(max-width: 968px)">
                             <img src="./img/mp-post02.jpg" alt="">
                         </picture>
                         <div class="post_heading">
@@ -209,7 +225,11 @@
                 <div class="info_section_content">
                     <div class="side_content">
                         <h2 class="info_header">Full-time UI/UX designer
-                            Head of Design at VeronaLabs.com</h2>
+                            Head of Design at VeronaLabs.com
+                        </h2>
+                        <svg class="arrow">
+                            <use xlink:href="./img/sprite.svg#arrow_01" />
+                        </svg>
                     </div>
                     <div class="side_content">
                         <p class="info_description">We work with clients around the world from our headquarters in
@@ -268,7 +288,16 @@
             <span class="rights">© Copyright Manifest Theme. Allrights reserved</span>
         </footer>
     </main>
+    <script>
+        function toggleMenu(e)  {
+            e.preventDefault ();
 
+            document.querySelector('.hamburger').classList.toggle('is-active');
+
+            document.querySelector('.nav').classList.toggle('active');
+            document.querySelector('.header').classList.toggle('menu-open');
+        }
+    </script>
 </body>
 
 </html>
