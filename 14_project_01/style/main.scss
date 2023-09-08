@@ -1,3 +1,7 @@
+$hamburger-padding-x: 20px;
+$hamburger-padding-y: 15px;
+$hamburger-types : (collapse);
+
 @import "./variables";
 
 @mixin logo {
@@ -13,6 +17,7 @@
     background-color: #5373fd;
     font-family: $primaryFontFamily;
     color: $primaryFontColor;
+    text-transform: uppercase;
 }
 
 @mixin about_country {
@@ -44,9 +49,27 @@ html {
 }
 
 .container {
-    width: 68.75%;
+    width: 100%;
     max-width: 1320px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1440px) {
+        max-width: 81.25%;
+    }
+
+    @media screen and (max-width: 968px) {
+        max-width: 81.25%;
+    }
+
+    @media screen and (max-width: 568px) {
+        max-width: 81.25%;
+    }
+
+    @media screen and (max-width: 320px) {
+        max-width: 81.25%;
+    }
+
+
 }
 
 .header_wrapper {
@@ -55,11 +78,18 @@ html {
     background-size: cover;
     width: 100%;
     min-height: 100vh;
+    padding-top: 295px;
+
+
+    @media screen and (max-width: 968px) {
+        background-image: url(../img/header_background_tablet.webp);
+    }
+
+    @media screen and (max-width: 568px) {
+        background-image: url(../img/header_background_mobile.webp);
+    }
 }
 
-.header_content {
-    padding-top: 295px;
-}
 
 .header_logo {
     display: flex;
@@ -67,9 +97,18 @@ html {
     gap: 10px;
     align-items: center;
     margin-bottom: 10px;
+    text-align: center;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
     .logo {
         @include logo;
+
+        @media screen and (max-width: 320px) {
+            font-size: 42px;
+        }
     }
 
 
@@ -82,6 +121,18 @@ html {
     letter-spacing: 6.82px;
     text-align: center;
     margin-bottom: 48px;
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 300px;
+    }
+
+    @media screen and (max-width: 568px) {
+        margin-bottom: 300px;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 12px;
+    }
 }
 
 .search {
@@ -93,6 +144,10 @@ html {
 
     &:hover {
         box-shadow: -4px -17px 29px -7px rgba(0, 0, 0, 0.75);
+    }
+
+    @media screen and (max-width: 800px) {
+        display: none;
     }
 }
 
@@ -108,7 +163,8 @@ html {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 2.8px;
-    }
+}
+
 
 .search_button {
     @include blue_button;
@@ -155,9 +211,20 @@ html {
     }
 }
 
+
+.scroll_icon {
+    width: 14px;
+    height: 16px;
+}
+
+// NAVIGATION //
+
 .navigation_section {
     padding: 32px 0;
     background-color: $primaryBackgroundColor;
+    position: sticky;
+    top: 0;
+    z-index: 555555;
 
     .navigation_content {
         display: flex;
@@ -168,25 +235,168 @@ html {
     .nav_logo {
         @include logo;
         font-size: 24px;
+
+
     }
 }
 
 .navigation {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 968px) {
+        position: fixed;
+        z-index: 3;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #5373FD;
+        justify-content: center;
+        transform: translateY(-150%);
+
+        &.active {
+            transform: none;
+        }
+    }
 }
+
+.logo_mobile {
+    display: none;
+
+    @media screen and (max-width: 968px) {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 500px;
+
+
+
+        .logo {
+            @include logo();
+            font-size: 70px;
+            display: block;
+            text-align: center;
+
+            @media screen and (max-width: 500px) {
+                font-size: 50px;
+            }
+
+            @media screen and (max-width: 320px) {
+                font-size: 45px;
+            }
+
+
+
+
+        }
+    }
+}
+
+.sublogo {
+    display: none;
+
+
+    @media screen and (max-width: 968px) {
+        display: block;
+        font-family: $secondaryFontFamily;
+        font-weight: 400;
+        font-size: 25px;
+        letter-spacing: 6.82px;
+        text-align: center;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: 500px) {
+            font-size: 17px;
+        }
+
+        @media screen and (max-width: 320px) {
+            font-size: 14px;
+        }
+
+    }
+}
+
+
 
 .nav_list {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
 
-    .nav_item {
-        font-family: $primaryFontFamily;
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
+    @media screen and (max-width: 968px) {
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+
+
+.nav_item {
+    font-family: $primaryFontFamily;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+
+    @media screen and (max-width: 968px) {
+        text-align: center;
+        font-size: 30px;
+
+        @media screen and (max-width: 320px) {
+
+            font-size: 20px;
+        }
+
+
+    }
+}
+
+.nav_link {
+
+
+
+    @media screen and (max-width: 968px) {
+        width: 100%;
+        display: block;
+        padding: 20px 0;
+        position: relative;
+
+        &:hover {
+
+
+
+            &:after {
+                content: '';
+                background-color: #fff;
+                width: 100%;
+                height: 2px;
+                display: block;
+                position: absolute;
+                bottom: -6px;
+                left: 0;
+                right: 0;
+            }
+
+        }
+    }
+}
+
+
+.hamburger_wrapper {
+    display: none;
+
+    @media screen and (max-width: 968px) {
+        display: block;
+        z-index: 666;
+
     }
 }
 
@@ -199,6 +409,17 @@ html {
     padding: 124px 0;
     width: 100%;
     background-position: bottom;
+
+    @media screen and (max-width: 968px) {
+        background-image: url(../img/choose_background-tablet.webp);
+        padding: 60px 0;
+    }
+
+    @media screen and (max-width: 568px) {
+        background-image: url(../img/choose_background_phone.webp);
+    }
+
+
 }
 
 .choose_content {
@@ -206,6 +427,12 @@ html {
     gap: 136px;
     justify-content: flex-start;
     align-items: center;
+
+    @media screen and (max-width: 968px) {
+        gap: 40px;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 .choose_info {
@@ -221,6 +448,11 @@ html {
         line-height: 40px;
         text-transform: capitalize;
         margin-bottom: 24px;
+
+        @media screen and (max-width: 968px) {
+            font-size: 45px;
+            text-align: center;
+        }
     }
 
     .choose_text {
@@ -243,30 +475,56 @@ html {
             margin-bottom: 20px;
         }
 
-        
+        @media screen and (max-width: 968px) {
+            font-size: 20px;
+        }
     }
 
-}
+    .button_wrapper {
+        @media screen and (max-width: 568px) {
+            display: block;
+            text-align: center;
 
-.blue_button {
-    @include blue_button;
-    padding: 20px 32px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 1.12px;
-    text-transform: uppercase;
+        }
 
-    &:hover {
-        transform: scale(1.1);
+        .blue_button {
+            @include blue_button;
+            padding: 20px 32px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1.12px;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 320px) {}
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+        }
     }
 }
+
 
 .choose_images {
     max-width: 424px;
     width: 100%;
     position: relative;
 
+    @media screen and (max-width: 968px) {
+        position: initial;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-around;
+        max-width: initial;
+
+        @media screen and (max-width: 568px) {
+            flex-direction: column;
+        }
+    }
 
     .pic01 {
         max-width: 350px;
@@ -274,7 +532,14 @@ html {
         position: absolute;
         bottom: 0;
         margin-bottom: 16px;
-        
+
+        @media screen and (max-width: 968px) {
+            position: initial;
+            width: 100%;
+            margin: 0;
+            justify-content: space-between;
+        }
+
     }
 
     .pic02 {
@@ -282,41 +547,79 @@ html {
         width: 100%;
         position: absolute;
         right: 0;
+
+        @media screen and (max-width: 968px) {
+            position: initial;
+            width: 100%;
+            margin: 0;
+        }
     }
 }
+
+
 
 // ICONS SECTION //
 
 .icons_section {
     background-color: #333333;
     width: 100%;
-    min-height: 306px;
+    padding-bottom: 160px;
+
+    @media screen and (max-width: 568px) {
+        min-height: 206px;
+    }
+
+    @media screen and (max-width: 500px) {
+        padding: 50px 0;
+    }
+
 
     .container {
-        
+
         .icons {
             display: flex;
             gap: 25px;
             width: 100%;
             position: relative;
-            top: 120px;
+            top: 110px;
+            align-items: flex-start;
+
+            @media screen and (max-width: 968px) {
+                top: 90px;
+            }
+
+            @media screen and (max-width: 500px) {
+                flex-direction: column;
+                ;
+                position: initial;
+            }
+
+
+
 
             &::before {
-                // content: url(../img/line.svg);
                 content: "";
                 background-image: url(../img/line.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 100%;
-                height: 100%;
-                position: absolute;
+                height: 90px;
                 max-width: 66%;
                 position: absolute;
+                top: -57px;
                 left: 0;
-                top: -60px;
-                left: 224px;
-            }
+                right: 0;
+                margin: 0 auto;
 
+                @media screen and (max-width: 968px) {
+                    top: -25px;
+                }
+
+
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -329,6 +632,10 @@ html {
     max-width: 424px;
     width: 100%;
     position: relative;
+
+    @media screen and (max-width: 568px) {
+        justify-content: space-between;
+    }
 
     .icon_wrapper {
         width: 96px;
@@ -348,6 +655,10 @@ html {
         line-height: 40px;
         text-transform: capitalize;
         text-align: center;
+
+        @media screen and (max-width: 568px) {
+            font-size: 22px;
+        }
     }
 }
 
@@ -365,60 +676,121 @@ html {
     background-size: cover;
     min-height: 684px;
 
-    .container {
-        position: relative;
+
+    @media screen and (max-width: 968px) {
+        background-image: url(../img/spain_tablet.webp);
+        min-height: initial;
+        padding: 100px 0;
     }
 
+    @media screen and (max-width: 568px) {
+        background-image: url(../img/spain_phone.webp);
+    }
+
+
+    .container {
+        position: relative;
+
+        @media screen and (max-width: 968px) {
+            position: initial;
+        }
+    }
+
+
+    .about_country_left {
+        @include about_country();
+        position: absolute;
+        top: 220px;
+
+        @media screen and (max-width: 968px) {
+            max-width: initial;
+            position: initial;
+        }
+
+        @media screen and (max-width: 320px) {
+            padding: 40px 20px;
+        }
+
+        &:hover {
+            box-shadow: 11px -11px 20px -7px rgba(0, 0, 0, 0.75);
+        }
+    }
+}
+
+.country_info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 968px) {
+        text-align: center;
+        gap: 25px;
+    }
+
+    .about_country_subheader {
+        font-family: $secondaryFontFamily;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 28px;
+        letter-spacing: 2px;
+
+        @media screen and (max-width: 968px) {
+            font-size: 25px;
+        }
+
+    }
+
+    .country_name {
+        font-family: $secondaryFontFamily;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 968px) {
+            font-size: 30px;
+        }
+    }
+
+    .country_description {
+        font-family: $secondaryFontFamily;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 28px;
+        letter-spacing: 1.6px;
+
+        @media screen and (max-width: 968px) {
+            font-size: 20px;
+        }
+    }
 }
 
 
-.about_country_left {
-    @include about_country();
-    position: absolute;
-    top: 220px;
+.button_wrapper {
 
-
-    &:hover {
-        box-shadow: 11px -11px 20px -7px rgba(0, 0, 0, 0.75);
-    }
-
-    .country_info {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 24px;
-
-        .about_country_subheader {
-            font-family: $secondaryFontFamily;
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 28px;
-            letter-spacing: 2px;
-        }
-
-        .country_name {
-            font-family: $secondaryFontFamily;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 28px;
-            text-transform: uppercase;
-        }
-
-        .country_description {
-            font-family: $secondaryFontFamily;
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 28px;
-            letter-spacing: 1.6px;
-        }
+    @media screen and (max-width: 968px) {
+        display: block;
+        text-align: center;
     }
 
     .blue_button {
         @include blue_button;
+        font-size: 16px;
         padding: 20px 56px;
+        text-align: center;
 
+        &:hover {
+            transform: scale(1.1);
+        }
     }
+
+
 }
+
+
+
+
 
 .spain_second_section {
     background-image: url(../img/spain_02.webp);
@@ -427,8 +799,25 @@ html {
     background-size: cover;
     min-height: 684px;
 
+    @media screen and (max-width: 968px) {
+        background-image: url(../img/spain_02_tablet.webp);
+        min-height: initial;
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 568px) {
+        background-image: url(../img/spain02_phone.webp);
+    }
+
+
+
+
     .container {
         position: relative;
+
+        @media screen and (max-width: 968px) {
+            position: initial;
+        }
     }
 
     .about_country_right {
@@ -437,48 +826,28 @@ html {
         top: 220px;
         right: 0px;
 
+        @media screen and (max-width: 968px) {
+            position: initial;
+            max-width: initial;
+        }
+
+        @media screen and (max-width: 568px) {
+            top: 130px;
+        }
+
+        @media screen and (max-width: 320px) {
+            position: initial;
+            padding: 40px 20px;
+        }
+
+
         &:hover {
             box-shadow: -15px -11px 20px -7px rgba(0, 0, 0, 0.75);
         }
-
-        .country_info {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
-
-            .about_country_subheader {
-                font-family: $secondaryFontFamily;
-                font-size: 20px;
-                font-weight: 300;
-                line-height: 28px;
-                letter-spacing: 2px;
-            }
-
-            .country_name {
-                font-family: $secondaryFontFamily;
-                font-size: 20px;
-                font-weight: 400;
-                line-height: 28px;
-                text-transform: uppercase;
-            }
-
-            .country_description {
-                font-family: $secondaryFontFamily;
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 28px;
-                letter-spacing: 1.6px;
-            }
-        }
-
-        .blue_button {
-            @include blue_button;
-            padding: 20px 56px;
-
-        }
     }
 }
+
+
 
 // FEEDBACK_SECTION //
 
@@ -490,20 +859,39 @@ html {
     padding-top: 120px;
     padding-bottom: 180px;
 
+    @media screen and (max-width: 968px) {
+        background-image: url(../img/feedback_background_tablet.webp);
+        padding: 100px 0;
+    }
+
+    @media screen and (max-width: 568px) {
+        background-image: url(../img/feedback_background_phone.webp);
+    }
+
+
+    @media screen and (max-width: 320px) {
+        padding: 80px 0;
+    }
+
+
 }
 
-.feedback_section_content {
+.feedback_header {
+    font-family: $primaryFontFamily;
+    color: $primaryFontColor;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+    text-align: center;
 
+    @media screen and (max-width: 968px) {
+        font-size: 45px;
+    }
 
-    .feedback_header {
-        font-family: $primaryFontFamily;
-        color: $primaryFontColor;
-        font-size: 36px;
-        font-weight: 400;
-        line-height: 40px;
-        text-transform: capitalize;
-        margin-bottom: 60px;
-        text-align: center;
+    @media screen and (max-width: 568px) {
+        font-size: 44px;
     }
 }
 
@@ -511,11 +899,20 @@ html {
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: 968px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+
     &:hover {
         box-shadow: -4px -17px 29px -7px rgba(0, 0, 0, 0.75);
 
         .quote_icon {
             --p1: #ffff;
+        }
+
+        @media screen and (max-width: 968px) {
+            box-shadow: none;
         }
     }
 
@@ -525,10 +922,18 @@ html {
     }
 
     .review {
-        padding: 48px 70px;
+        padding: 48px 65px 48px 60px;
         background-color: #333;
         width: 100%;
         max-width: 885px;
+
+        @media screen and (max-width: 568px) {
+            padding: 40px;
+        }
+
+        @media screen and (max-width: 320px) {
+            padding: 40px 20px;
+        }
 
         .review_name {
             color: $primaryFontColor;
@@ -538,6 +943,11 @@ html {
             line-height: 28px;
             text-transform: uppercase;
             margin-bottom: 16px;
+
+            @media screen and (max-width: 568px) {
+                font-size: 25px;
+                text-align: center;
+            }
         }
 
         .review_text {
@@ -547,14 +957,18 @@ html {
             font-weight: 300;
             line-height: 28px;
             letter-spacing: 1.6px;
+
+            @media screen and (max-width: 568px) {
+                font-size: 20px;
+            }
         }
     }
-}
 
-.quote_icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
+    .quote_icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
 }
 
 // FOOTER //
@@ -564,9 +978,12 @@ html {
 }
 
 .footer_wrapper {
-    padding-top: 80px;
+    padding: 80px 0;
     text-align: center;
-    padding-bottom: 80px;
+
+    @media screen and (max-width: 968px) {
+        padding: 40px 0;
+    }
 }
 
 .footer_logo {
@@ -599,6 +1016,12 @@ html {
     display: flex;
     gap: 32px;
     justify-content: center;
+
+
+    @media screen and (max-width: 320px) {
+        gap: 20px;
+        justify-content: space-between;
+    }
 }
 
 .facebook {
@@ -624,4 +1047,14 @@ html {
 .pinterest {
     width: 31px;
     height: 32px;
+}
+
+
+@media screen and (max-width: 968px) {
+
+
+    .choose_info>.button {
+        display: block;
+        text-align: center;
+    }
 }

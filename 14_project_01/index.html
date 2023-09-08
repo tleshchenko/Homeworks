@@ -4,23 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bhromaon</title>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/main.min.css">
+    <link rel="stylesheet" href="./style/hamburgers.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo&family=Josefin+Sans:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="./assets/fontawesome/css/brands.css" />
-    <link rel="stylesheet" href="./assets/fontawesome/css/solid.css" />
 </head>
 
 <body>
     <div class="page_wrapper">
         <header class="header">
             <div class="header_wrapper">
-                <div class="header_content">
+                <div class="container">
                     <div class="header_logo">
                         <a class="logo" href="">Bhromaon</a>
                     </div>
@@ -35,18 +33,18 @@
                     <div class="scroll_button_wrapper">
                         <a class="scroll_button" href="#nav">
                             <span class="button_text">Scroll Down</span>
-                            <i class="fa-solid fa-chevron-down"></i>
+                            <svg class="scroll_icon">
+                                <use xlink:href="./img/sprite.svg#chevron_down" />
+                            </svg>
                         </a>
                     </div>
                 </div>
-
             </div>
         </header>
     </div>
 </body>
 <div class="page_wrapper">
     <main>
-
         <div id="nav" class="navigation_section">
             <div class="container">
                 <div class="navigation_content">
@@ -54,26 +52,37 @@
                         <a class="nav_logo" href="">Bhromaon</a>
                     </div>
                     <div class="navigation">
+                        <div class="logo_mobile">
+                            <a class="logo" href="">Bhromaon</a>
+                        </div>
+                        <h2 class="sublogo">Safe Travel Anywhere</h2>
                         <ul class="nav_list">
                             <li class="nav_item">
-                                <a href="">Who We Are</a>
+                                <a class="nav_link" href="#about">Who We Are</a>
                             </li>
                             <li class="nav_item">
-                                <a href="">What We Do</a>
+                                <a class="nav_link" href="#icons">What We Do</a>
                             </li>
                             <li class="nav_item">
-                                <a href="">Travel With Us</a>
+                                <a class="nav_link" href="#spain">Travel With Us</a>
                             </li>
                             <li class="nav_item">
-                                <a href="">Contact Us</a>
+                                <a class="nav_link" href="#feedback">Contact Us</a>
                             </li>
                         </ul>
+                    </div>
+                    <div class="hamburger_wrapper">
+                        <button class="hamburger hamburger--collapse" onclick="toggleMenu(event)" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="choose_section">
+        <div id="about" class="choose_section">
             <div class="container">
                 <div class="choose_content">
                     <div class="choose_info">
@@ -87,18 +96,22 @@
                                 moment, so
                                 blinded by desire, that.</p>
                         </div>
-                        <div class="button">
+                        <div class="button_wrapper">
                             <button class="blue_button" type="button">Explore Places</button>
                         </div>
                     </div>
                     <div class="choose_images">
-                        <img class="pic01" src="./img/image_01.webp" alt="">
-                        <img class="pic02" src="./img/image_02.webp" alt="">
+                        <picture>
+                            <img class="pic01" src="./img/image_01.webp" alt="">
+                        </picture>
+                        <picture>
+                            <img class="pic02" src="./img/image_02.webp" alt="">
+                        </picture>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="icons_section">
+        <div id="icons" class="icons_section">
             <div class="container">
                 <div class="icons">
                     <div class="iconbox">
@@ -128,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <div class="spain_first_section">
+        <div id="spain" class="spain_first_section">
             <div class="container">
                 <div class="about_country_left">
                     <div class="country_info">
@@ -140,7 +153,7 @@
                             complete
                             account of the system</span>
                     </div>
-                    <div class="button">
+                    <div class="button_wrapper">
                         <button class="blue_button" type="button">book now</button>
                     </div>
                 </div>
@@ -158,18 +171,20 @@
                             complete
                             account of the system</span>
                     </div>
-                    <div class="button">
+                    <div class="button_wrapper">
                         <button class="blue_button" type="button">book now</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="feedback_section">
+        <div id="feedback" class="feedback_section">
             <div class="container">
                 <div class="feedback_section_content">
                     <h2 class="feedback_header">What Our Tourists Say</h2>
                     <div class="review_wrapper">
-                        <img class="review_image" src="./img/rewiev_image.webp" alt="">
+                        <picture>
+                            <img class="review_image" src="./img/rewiev_image.webp" alt="">
+                        </picture>
                         <div class="review">
                             <h3 class="review_name">Sam Sumon</h3>
                             <span class="review_text">
@@ -186,7 +201,7 @@
                 </div>
             </div>
         </div>
-    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer_wrapper">
@@ -204,28 +219,28 @@
                             </a>
                         </li>
                         <li class="item_link">
-                            <a href="" class="link">
+                            <a href="#" class="link">
                                 <svg class="twitter">
                                     <use xlink:href="./img/sprite.svg#twitter_icon" />
                                 </svg>
                             </a>
                         </li>
                         <li class="item_link">
-                            <a href="" class="link">
+                            <a href="#" class="link">
                                 <svg class="linkedin">
                                     <use xlink:href="./img/sprite.svg#linkedin_icon" />
                                 </svg>
                             </a>
                         </li>
                         <li class="item_link">
-                            <a href="" class="link">
+                            <a href="#" class="link">
                                 <svg class="youtube">
                                     <use xlink:href="./img/sprite.svg#youtube_icon" />
                                 </svg>
                             </a>
                         </li>
                         <li class="item_link">
-                            <a href="" class="link">
+                            <a href="#" class="link">
                                 <svg class="pinterest">
                                     <use xlink:href="./img/sprite.svg#pinterest_icon" />
                                 </svg>
@@ -237,6 +252,16 @@
 
         </div>
     </footer>
+</main>
 </div>
+<script>
+    function toggleMenu(e)  {
+        e.preventDefault ();
 
+        document.querySelector('.hamburger').classList.toggle('is-active');
+
+        document.querySelector('.navigation').classList.toggle('active');
+        document.querySelector('.header').classList.toggle('menu-open');
+    }
+</script>
 </html>

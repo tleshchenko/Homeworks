@@ -110,7 +110,7 @@ $hamburger-types : (collapse);
         padding-top: 130px;
         transform: translateX(150%);
 
-        &.active {
+        .active {
             transform: none;
         }
 
