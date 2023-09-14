@@ -1,0 +1,24 @@
+.header {
+  text-align: center;
+  color: blueviolet;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 45px;
+  padding-top: 100px;
+  margin-bottom: 70px;
+}
+
+.buttons_wrapper {
+  max-width: 60%;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+}
