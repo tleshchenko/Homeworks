@@ -216,7 +216,7 @@ function guessNumber() {
   action(minValue, maxValue);
 }
 
-function calcDate() {
+function calcNextDate() {
   var userDate = prompt("Add any date");
   var dateArray = userDate.split('.');
   var day = +dateArray[0];

@@ -202,7 +202,7 @@ function guessNumber() {
 }
 
 
-function calcDate() {
+function calcNextDate() {
     const userDate = prompt(`Add any date`);
     const dateArray = userDate.split('.');
     const day = +dateArray[0];
