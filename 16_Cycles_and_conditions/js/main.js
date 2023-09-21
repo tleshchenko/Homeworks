@@ -181,26 +181,90 @@ function dayOfTheWeek() {
 }
 
 function guessNumber() {
+    const minValue = 0;
+    const maxValue = 100;
+    let steps = 0;
 
-    const minNumber = 0;
-    const maxNumber = 100;
-    let check = 0;
-
-    function getNumber(minNumber, maxNumber) {
-        const middle = parseInt(minNumber - maxNumber) / 2 + maxNumber;
-        const isSuccess = confirm(`Is your number is ${middle} ?`);
+    function action(minValue, maxValue) {
+        const middle = parseInt(((minValue - maxValue) / 2) + maxValue);
+        const isSuccess = confirm(`Your number is ${middle} ?`);
 
         if (isSuccess) {
-            alert(`Thank you for a game!`);
+            alert(`Thanks for a game! We spent ${steps} steps`);
             return false;
         } else {
-            check++;
-            const isLarger = (`Your number is larger than ${middle}?`);
-            isLarger
-                ? getNumber(middle, maxNumber)
-                : getNumber(minNumber, middle);
+            steps++;
+            const isLarger = confirm(`Your number is larger than ${middle} ?`);
+            isLarger ? action(middle, maxValue) : action(minValue, middle);
         }
     }
-    getNumber(minNumber, maxNumber);
+    action(minValue, maxValue);
 }
+
+
+function calcDate() {
+    const userDate = prompt(`Add any date`);
+    const dateArray = userDate.split('.');
+    const day = +dateArray[0];
+    const month = +dateArray[1];
+    const year = +dateArray[2];
+
+    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        return false;
+    }
+
+    let nextDay = day + 1;
+    let nextMonth = month;
+    let nextYear = year;
+
+    switch (month) {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+
+            if (day === 30) {
+                nextDay = 1
+                nextMonth++
+            }
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (day >= 31) {
+                nextDay = 1;
+                nextMonth++
+            }
+            break;
+        case 2:
+            if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                if (day === 29) {
+                    nextDay = 1;
+                    nextMonth++
+                }
+            } else {
+                if (day >= 28) {
+                    nextDay = 1;
+                    nextMonth++;
+                }
+            }
+            break;
+    }
+
+    if (nextMonth > 12) {
+        nextMonth = 1;
+        nextDay = 1;
+        nextYear++;
+    }
+
+    const addZero = (n) => (n < 10 ? `0${n}` : n);
+
+    alert(`Next date: ${addZero(nextDay)}.${addZero(nextMonth)}.${nextYear}`)
+}
+
+
 
