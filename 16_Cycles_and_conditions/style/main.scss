@@ -1,0 +1,62 @@
+body {
+    width: 100%;
+    font-family: 'Aleo', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/spot_backlight_purple_206019_3840x2160.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.page_wrapper {
+    padding: 100px;
+
+    .main_content {
+        background-color: rgba(212, 206, 206, 0.1);
+        backdrop-filter: blur(50px);
+        padding: 70px;
+        border-radius: 20px;
+    }
+}
+
+.header {
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.buttons_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 25px;
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgba(212, 206, 206, 0.1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+
+    &:hover {
+        box-shadow: 0px 10px 15px -1px rgba(0, 0, 0, 0.34);
+    }
+
+}

@@ -38,15 +38,21 @@ $hamburger-types : (collapse);
     scroll-behavior: smooth;
 }
 
+
 body,
 html {
     font-family: $primaryFontFamily;
+
+
 }
+
+
 
 .page_wrapper {
     max-width: 4096px;
     width: 100%;
 }
+
 
 .container {
     width: 100%;
@@ -99,16 +105,20 @@ html {
     margin-bottom: 10px;
     text-align: center;
 
-    &:hover {
-        transform: scale(1.1);
-    }
+
 
     .logo {
         @include logo;
 
+        &:hover {
+            transform: scale(1.1);
+        }
+
         @media screen and (max-width: 320px) {
             font-size: 42px;
         }
+
+
     }
 
 
@@ -227,7 +237,8 @@ html {
     z-index: 555555;
 
     @media screen and (max-width: 568px) {
-        padding: 18px 0;}
+        padding: 18px 0;
+    }
 
     .navigation_content {
         display: flex;
@@ -399,9 +410,11 @@ html {
     @media screen and (max-width: 968px) {
         display: block;
         z-index: 666;
-
     }
 }
+
+
+
 
 // WHY CHOOSE SECTION //
 
