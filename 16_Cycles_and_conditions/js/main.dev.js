@@ -1,5 +1,17 @@
 "use strict";
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral([" "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 function age() {
   var checkAge = parseInt(prompt('How old are you?'));
 
@@ -284,4 +296,87 @@ function calcNextDate() {
   };
 
   alert("Next date: ".concat(addZero(nextDay), ".").concat(addZero(nextMonth), ".").concat(nextYear));
+} // Functions 
+
+
+function compareNumbers() {
+  var firstNumber = parseInt(prompt("Enter first number"));
+  var secondNumber = parseInt(prompt("Enter second number"));
+
+  if (!isNaN(firstNumber) || !isNaN(secondNumber)) {
+    if (firstNumber < secondNumber) {
+      return -1;
+    }
+
+    if (firstNumber > secondNumber) {
+      return 1;
+    }
+
+    if (firstNumber == secondNumber) {
+      return 0;
+    }
+  } else {
+    console.log("Only numbers please");
+  }
+}
+
+function factorial() {
+  var inputNumber = parseInt(prompt("Enter any number to calculate factorial"));
+
+  if (!isNaN(inputNumber)) {
+    var result = inputNumber;
+
+    for (var i = 1; i < inputNumber; i++) {
+      result *= i;
+    }
+
+    alert("Factorial of ".concat(inputNumber, " will be ").concat(result));
+  } else {
+    alert("Only number please");
+  }
+}
+
+function Area() {
+  var width = parseInt(prompt("Add width"));
+  var lenght = parseInt(prompt("Add lenght"));
+
+  if (!isNaN(width) && !isNaN(lenght)) {
+    if (isNaN(width)) {
+      var squareArea = lenght * lenght;
+      alert("Square area is ".concat(squareArea));
+    }
+
+    if (isNaN(lenght)) {
+      var _squareArea = width * width;
+
+      alert("Square area is ".concat(_squareArea));
+    } else {
+      var rectangleArea = width * lenght;
+      alert("Rectangle area is ".concat(rectangleArea));
+    }
+  } else {
+    alert("Numbers only");
+    Area();
+  }
+}
+
+function perfectNumber() {
+  var number = parseInt(prompt("Add any number"));
+
+  if (!isNaN(number)) {
+    var sumOfDivisors = function sumOfDivisors(number) {
+      var sum = 0;
+
+      for (var i = 1; i <= number && number % i === 0; i++) {
+        sum += i;
+      }
+
+      return sum === 0;
+    };
+  }
+}
+
+function splitNumbers() {
+  var numbers = prompt("Enter numbers separated by space").split(_templateObject());
+  alert(numbers.join(""));
 }

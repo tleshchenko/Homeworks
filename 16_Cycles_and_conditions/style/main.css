@@ -25,6 +25,10 @@ body {
   border-radius: 20px;
 }
 
+.cycles_section {
+  margin-bottom: 70px;
+}
+
 .header {
   font-family: "Rubik";
   font-weight: 700;

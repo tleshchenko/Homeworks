@@ -267,4 +267,82 @@ function calcNextDate() {
 }
 
 
+// Functions 
+
+function compareNumbers() {
+
+    const firstNumber = parseInt(prompt(`Enter first number`));
+    const secondNumber = parseInt(prompt(`Enter second number`));
+
+    if (!isNaN(firstNumber) || !isNaN(secondNumber)) {
+        if (firstNumber < secondNumber) {
+            return -1;
+        } if (firstNumber > secondNumber) {
+            return 1;
+        } if (firstNumber == secondNumber) {
+            return 0;
+        }
+    } else {
+        console.log(`Only numbers please`);
+    }
+}
+
+function factorial() {
+
+    const inputNumber = parseInt(prompt(`Enter any number to calculate factorial`));
+
+    if (!isNaN(inputNumber)) {
+        let result = inputNumber;
+        for (let i = 1; i < inputNumber; i++) {
+            result *= i;
+        } alert(`Factorial of ${inputNumber} will be ${result}`);
+    }
+    else {
+        alert(`Only number please`);
+    }
+}
+
+function Area() {
+
+    const width = parseInt(prompt(`Add width`));
+    const lenght = parseInt(prompt(`Add lenght`));
+
+
+    if (!isNaN(width) && !isNaN(lenght)) {
+        if (isNaN(width)) {
+            let squareArea = lenght * lenght;
+            alert(`Square area is ${squareArea}`);
+        } if (isNaN(lenght)) {
+            let squareArea = width * width;
+            alert(`Square area is ${squareArea}`);
+        } else {
+            let rectangleArea = width * lenght;
+            alert(`Rectangle area is ${rectangleArea}`)
+        }
+    } else {
+        alert(`Numbers only`)
+        Area()
+    }
+}
+
+function perfectNumber() {
+
+    const number = parseInt(prompt(`Add any number`));
+
+    if (!isNaN(number)) {
+        const sumOfDivisors = number => {
+            let sum = 0;
+            for (let i = 1; i <= number && number % i === 0; i++) {
+                sum += i;
+            } return sum === 0
+        }
+    }
+}
+
+function splitNumbers() {
+
+    const numbers = prompt(`Enter numbers separated by space`).split` `;
+    alert(numbers.join(""));
+}
+
 
