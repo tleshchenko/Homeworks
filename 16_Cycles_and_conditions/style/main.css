@@ -25,7 +25,7 @@ body {
   border-radius: 20px;
 }
 
-.cycles_section {
+.cycles_section, .functions_section {
   margin-bottom: 70px;
 }
 

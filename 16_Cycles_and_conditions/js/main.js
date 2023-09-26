@@ -345,4 +345,96 @@ function splitNumbers() {
     alert(numbers.join(""));
 }
 
+function carInfo() {
 
+    const car = {
+        manufacturer: 'Audi',
+        model: 'A7 Sportback',
+        year: 2019,
+        averageSpeed: 208,
+        fuelConsuption: 6,
+        drivers: ['Andriy'],
+        showInfo() {
+            for (const key in car) {
+                if (typeof car[key] !== 'function') {
+                    console.log(`${key}: ${car[key]}`);
+                }
+            }
+        },
+        addDrivers(driverName) {
+            this.drivers.push(driverName);
+        },
+        checkDriverName(driverName) {
+            if (this.drivers.includes(driverName)) {
+                console.log(`${driverName} is in the drivers list`);
+            } else {
+                console.log(`${driverName} is not in the drivers list`);
+            }
+        },
+        countTime(km) {
+            const drivingTime = (km / this.averageSpeed).toFixed(1);
+            const fuel = (km / 100) * this.fuelConsuption;
+            const stops = Math.floor(Math.floor(drivingTime) / 4);
+            const total = (+drivingTime + +stops).toFixed(1);
+            console.log(`You need ${drivingTime} h. and ${fuel} liters of fuel to drive ${km} km. You need to take ${stops} stops.`
+            );
+        }
+    }
+    car.showInfo();
+    car.addDrivers('Volodymur');
+    console.log(car.checkDriverName('Viktor'));
+    console.log(car.checkDriverName('Andriy'));
+    console.log(car.countTime(1600));
+}
+
+function timeCheck() {
+
+    const time = {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        addHours() {
+            if (this.seconds > 59) {
+                const newMinute = Math.floor(this.seconds / 60);
+                this.minutes += newMinute;
+                this.seconds %= 60;
+            }
+            if (this.minutes > 59) {
+                const newHour = Math.floor(this.minutes / 60);
+                this.hours += newHour;
+                this.minutes %= 60;
+            }
+            if (this.hours > 12) {
+                this.hours %= 12;
+            }
+        },
+        showTime() {
+            addZero = (n) => (n < 10) ? (`0${n}`) : n;
+            for (const key in time) {
+                if (typeof time[key] !== 'function') {
+                    return console.log(`time is ${addZero(this.hours)}:${addZero(this.minutes)}:${addZero(this.seconds)} sec.`);
+                }
+            }
+        },
+        plusHour(addHour) {
+            this.hours += addHour;
+            this.addHours();
+        },
+        plusMin(addMin) {
+            this.minutes += addMin;
+            this.addHours();
+        },
+        plusSec(addSec) {
+            this.seconds += addSec;
+            this.addHours();
+        },
+    }
+    time.hours = 23;
+    time.minutes = 57;
+    time.seconds = 30;
+    time.showTime()
+    time.plusHour(3)
+    time.plusMin(15)
+    time.plusSec(150)
+    time.showTime()
+}   

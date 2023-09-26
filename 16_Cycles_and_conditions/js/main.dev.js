@@ -380,3 +380,99 @@ function splitNumbers() {
   var numbers = prompt("Enter numbers separated by space").split(_templateObject());
   alert(numbers.join(""));
 }
+
+function carInfo() {
+  var car = {
+    manufacturer: 'Audi',
+    model: 'A7 Sportback',
+    year: 2019,
+    averageSpeed: 208,
+    fuelConsuption: 6,
+    drivers: ['Andriy'],
+    showInfo: function showInfo() {
+      for (var key in car) {
+        if (typeof car[key] !== 'function') {
+          console.log("".concat(key, ": ").concat(car[key]));
+        }
+      }
+    },
+    addDrivers: function addDrivers(driverName) {
+      this.drivers.push(driverName);
+    },
+    checkDriverName: function checkDriverName(driverName) {
+      if (this.drivers.includes(driverName)) {
+        console.log("".concat(driverName, " is in the drivers list"));
+      } else {
+        console.log("".concat(driverName, " is not in the drivers list"));
+      }
+    },
+    countTime: function countTime(km) {
+      var drivingTime = (km / this.averageSpeed).toFixed(1);
+      var fuel = km / 100 * this.fuelConsuption;
+      var stops = Math.floor(Math.floor(drivingTime) / 4);
+      var total = (+drivingTime + +stops).toFixed(1);
+      console.log("You need ".concat(drivingTime, " h. and ").concat(fuel, " liters of fuel to drive ").concat(km, " km. You need to take ").concat(stops, " stops."));
+    }
+  };
+  car.showInfo();
+  car.addDrivers('Volodymur');
+  console.log(car.checkDriverName('Viktor'));
+  console.log(car.checkDriverName('Andriy'));
+  console.log(car.countTime(1600));
+}
+
+function timeCheck() {
+  var time = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    addHours: function addHours() {
+      if (this.seconds > 59) {
+        var newMinute = Math.floor(this.seconds / 60);
+        this.minutes += newMinute;
+        this.seconds %= 60;
+      }
+
+      if (this.minutes > 59) {
+        var newHour = Math.floor(this.minutes / 60);
+        this.hours += newHour;
+        this.minutes %= 60;
+      }
+
+      if (this.hours > 12) {
+        this.hours %= 12;
+      }
+    },
+    showTime: function showTime() {
+      addZero = function addZero(n) {
+        return n < 10 ? "0".concat(n) : n;
+      };
+
+      for (var key in time) {
+        if (typeof time[key] !== 'function') {
+          return console.log("time is ".concat(addZero(this.hours), ":").concat(addZero(this.minutes), ":").concat(addZero(this.seconds), " sec."));
+        }
+      }
+    },
+    plusHour: function plusHour(addHour) {
+      this.hours += addHour;
+      this.addHours();
+    },
+    plusMin: function plusMin(addMin) {
+      this.minutes += addMin;
+      this.addHours();
+    },
+    plusSec: function plusSec(addSec) {
+      this.seconds += addSec;
+      this.addHours();
+    }
+  };
+  time.hours = 23;
+  time.minutes = 57;
+  time.seconds = 30;
+  time.showTime();
+  time.plusHour(3);
+  time.plusMin(15);
+  time.plusSec(150);
+  time.showTime();
+}
