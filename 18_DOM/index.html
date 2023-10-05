@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/main.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Red+Hat+Display:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1 class="header">DOM</h1>
+            <div class="main_content">
+                <div class="song_section">
+                    <h2>Songs Playlist</h2>
+                    <button class="button" onclick="createPlaylist()" type="button">Check playlist</button>
+                    <div class="song_list"></div>
+                </div>
+                <div class="modal_section">
+                    <h2>Modal Button</h2>
+                    <button class="modal_button" onclick="showModal()" type="button">Show Me the Button!</button>
+                    <div class="modal_wrapper">
+                        <span class="modal_text">it's a modal!</span>
+                        <button onclick="closeModal()" class="close_text" type="button">tap to close</button>
+                    </div>
+                </div>
+                <div class="traffic_light_section">
+                    <h2>Traffic light</h2>
+                    <button class="light_button"  type="button"></button>
+                    <div class="traffic_light">
+                        <div class="light"></div>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+body {
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: normal;
+    background-image: url(../img/blur_abstraction_background_331068_3840x2160.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    &.active {
+        &::after {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.50);
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 4;
+        }
+    }
+}
+
+
+
+
+
+.header {
+    font-size: 60px;
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: 'Dela Gothic One';
+
+}
+
+.main_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.song_section,
+.modal_section,
+.traffic_light_section {
+    padding: 10px 100px;
+    border-radius: 15px;
+}
+
+h2 {
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    font-family: 'Red Hat Display';
+    letter-spacing: 2px;
+    color: #fff;
+
+}
+
+.button,
+.modal_button,
+.light_button {
+    border: 1px solid #000;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #000;
+    font-family: 'Red Hat Display';
+    letter-spacing: 2px;
+    font-size: 15px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+
+
+    &:hover {
+        -webkit-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+        -moz-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+        box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+        transform: scale(1.1);
+        border: 1px solid #000;
+        color: #fff;
+        background-color: #000;
+    }
+
+
+}
+
+.list_items {
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 15px;
+    text-transform: capitalize;
+    background-color: rgba(240, 240, 240, 0.091);
+    backdrop-filter: blur(50px);
+    -webkit-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+    line-height: 22px;
+    color: #fff;
+    text-align: left;
+
+
+
+    .song {
+        margin-bottom: 10px;
+    }
+
+
+}
+
+span {
+    font-weight: 100;
+}
+
+
+.modal_wrapper {
+    width: 500px;
+
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%, -50%);
+    position: fixed;
+    z-index: 5;
+    border-radius: 15px;
+    padding: 100px 90px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    -webkit-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+
+
+    &.active {
+        transform: translate(-50%, -50%);
+
+    }
+
+    .modal_text {
+        font-family: 'Dela Gothic One';
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-bottom: 150px;
+        margin: 0 auto;
+    }
+
+    .close_text {
+        font-family: 'Dela Gothic One';
+        text-transform: lowercase;
+        font-size: 18px;
+        margin: 0 auto;
+        padding: 10px 25px;
+        border-radius: 25px;
+        background-color: rgba(234, 234, 234, 0.798);
+    }
+}
+
+.traffic_light {
+    width: 200px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 4px 7px 5px 0px rgba(0, 0, 0, 0.33);
+
+    }
+
+.light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    background-color: initial;
+}
+
+
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
