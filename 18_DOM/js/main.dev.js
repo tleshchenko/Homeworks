@@ -48,35 +48,11 @@ function closeModal() {
   document.querySelector('.container').classList.remove('active');
 }
 
-var text = document.querySelector('.light_button').innerHTML = "Switch to green";
+var activeIndex = 0;
+var circleCollection = document.querySelectorAll('.circle');
 
-function switchLight() {
-  document.querySelector('.light').classList.toggle('green');
+function colorSwitch() {
+  document.querySelector('.circle.active').classList.remove('active');
+  circleCollection[activeIndex].classList.add('active');
+  activeIndex < circleCollection.length - 1 ? activeIndex++ : activeIndex = 0;
 }
-
-function switchToYellow() {
-  document.querySelector('.light').classList.toggle('yellow');
-}
-
-function switchToRed() {
-  document.querySelector('.light').classList.toggle('red');
-}
-
-function trafficLight() {
-  var currentText = document.querySelector('.light_button').innerHTML;
-
-  if (currentText === "Switch to green") {
-    buttonText = "Switch to red";
-  } else if (currentText === "Switch to red") {
-    buttonText = "Switch to yellow";
-    switchToRed();
-  } else {
-    buttonText = "Switch to green";
-    switchToYellow();
-  }
-
-  document.querySelector('.light_button').innerHTML = buttonText;
-}
-
-document.querySelector('.light_button').addEventListener("click", trafficLight);
-document.querySelector('.light_button').addEventListener("click", switchLight); // document.querySelector('.light_button').addEventListener("click", );

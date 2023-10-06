@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Светофор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <style>
+        .traffic-light {
+            position: relative;
+            width: 200px;
+            height: 400px;
+            background-color: #333;
+            border-radius: 10px;
+            border: 3px solid #222;
+        }
+    
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 50px;
+            left: 50px;
+            transition: background-color 0.5s;
+        }
+    
+        .red {
+            background-color: red;
+        }
+    
+        .yellow {
+            background-color: yellow;
+        }
+    
+        .green {
+            background-color: green;
+        }
+    </style>
+    <div class="traffic-light">
+        <div class="circle red"></div>
+        <div class="circle yellow"></div>
+        <div class="circle green"></div>
+    </div>
+    <button id="btn">Переключить цвет</button>
+    <script>
+        // Получаем все круги
+        const circles = document.querySelectorAll(".circle");
+
+        // Функция переключения цвета
+        function switchColor() {
+            // Получаем текущий цвет
+            const currentColor = circles[0].classList.contains("red") ? "yellow" : circles[0].classList.contains("yellow") ? "green" : "red";
+
+            // Меняем цвет на следующий
+            circles[0].classList.remove(currentColor);
+            circles[0].classList.add(currentColor === "green" ? "red" : currentColor);
+        }
+
+        // Обработчик нажатия кнопки
+        document.querySelector("#btn").addEventListener("click", switchColor);
+    </script>
+</body>
+
+</html>
