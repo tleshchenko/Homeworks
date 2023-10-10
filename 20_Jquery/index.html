@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Slick Slider</title>
+    <link rel="stylesheet" href="./style/slick.css">
+    <link rel="stylesheet" href="./style/slick-theme.css">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/main.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header_content">
+                <div class="logo_wrapper">
+                    <a class="logo" href="">
+                        <img src="./img/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="main_nav">
+                    <ul class="nav_list">
+                        <li class="nav_item">
+                            <a class="nav_link" href="">Home</a>
+                        </li>
+                        <li class="nav_item">
+                            <a class="nav_link" href="#catalog">Catalog</a>
+                        </li>
+                        <li class="nav_item">
+                            <a class="nav_link" href="#catalog">New</a>
+                        </li>
+                        <li class="nav_item">
+                            <a class="nav_link" href="#footer">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav_buttons">
+                    <a href=""> <svg class="nav_button_wrapper">
+                            <use xlink:href="./img/sprite.svg#search_icon" />
+                        </svg></a>
+                    <a href=""> <svg class="nav_button_wrapper">
+                            <use xlink:href="./img/sprite.svg#profile_icon" />
+                        </svg></a>
+                    <div class="hamburger_wrapper">
+                        <button class="hamburger hamburger--collapse" onclick="toggleMenu(event)" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main_wrapper">
+            <div class="main_slider">
+                <div class="slider_item">
+                    <div class="item_content">
+                        <span class="item_text">Find your own style</span>
+                        <button class="content_button" type="button">View More</button>
+                    </div>
+                    <img class="slider_img" src="./img/image01.webp" alt="">
+                </div>
+                <div class="slider_item">
+                    <div class="item_content">
+                        <span class="item_text">Discover New Options</span>
+                        <button class="content_button" type="button">View More</button>
+                    </div>
+                    <img class="slider_img" src="./img/image02.webp" alt="">
+                </div>
+                <div class="slider_item">
+                    <div class="item_content">
+                        <span class="item_text">expand your horizons</span>
+                        <button class="content_button" type="button">View More</button>
+                    </div>
+                    <img class="slider_img" src="./img/image03.webp" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="catalog" class="guitars_section">
+            <div class="container">
+                <h2 class="section_header">new arrivals</h2>
+                <div class="guitar_slider_wrapper">
+                    <picture class="guitar_prev_arrow">
+                        <source srcset="./img/prev.svg" media="(min-width: 768px)" />
+                        <img src="./img/prev.svg" />
+                    </picture>
+                    <div class="guitars_slider">
+                        <div class="guitar_item">
+                            <span class="status">in stock</span>
+                            <div class="card">
+                                <img src="./img/guitar01.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Hagstrom Alvar Limited Edition</span>
+                                    <span class="price">€2.990,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guitar_item">
+                            <span class="status">in stock</span>
+                            <div class="card">
+                                <img src="./img/guitar02.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Hagstrom Tremar Viking Deluxe Cloudy Seas</span>
+                                    <span class="price">€1.300,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guitar_item">
+                            <span class="status sold">sold</span>
+                            <div class="card">
+                                <img src="./img/guitar03.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Gibson Les Paul Standard 60s</span>
+                                    <span class="price">€3.749,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guitar_item">
+                            <span class="status">in stock</span>
+                            <div class="card">
+                                <img src="./img/guitar04.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Suhr Standard Plus Trans Blue Denim</span>
+                                    <span class="price">€3.449,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guitar_item">
+                            <span class="status">in stock</span>
+                            <div class="card">
+                                <img src="./img/guitar05.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Fender Telecaster Black Paisley Limited Edition</span>
+                                    <span class="price">€1.499,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guitar_item">
+                            <span class="status">in stock</span>
+                            <div class="card">
+                                <img src="./img/guitar04.webp" alt="" class="guitar_img">
+                                <div class="product_description">
+                                    <span class="name">Suhr Standard Plus Trans Blue Denim</span>
+                                    <span class="price">€3.449,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <picture class="guitar_next_arrow">
+                        <source srcset="./img/next.svg" media="(min-width: 768px)" />
+                        <img src="./img/next.svg" />
+                    </picture>
+                </div>
+                <button class="view_button" type="button">view more</button>
+            </div>
+        </div>
+        <div class="partners_section">
+            <div class="container">
+                <h2 class="section_header">our partners</h2>
+                <div class="partners_slider_wrapper">
+                    <picture class="prev_arrow">
+                        <source srcset="./img/prev.svg" media="(min-width: 768px)" />
+                        <img src="./img/prev.svg" />
+                    </picture>                
+                    <div class="partners_slider">
+                        <div class="partners_slider_item">
+                            <img src="./img/epiphone.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/g11852.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/gibson.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/engl.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/roland.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/fender.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/peavey.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/marshal.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/orange.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/fender.svg" alt="">
+                        </div>
+                        <div class="partners_slider_item">
+                            <img src="./img/orange.svg" alt="">
+                        </div>
+                    </div>
+                    <picture class="next_arrow">
+                        <source srcset="./img/next.svg" media="(min-width: 768px)" />
+                        <img src="./img/next.svg" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class="container">
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <a href=""> <svg class="footer_logo">
+                                <use xlink:href="./img/sprite.svg#logo_white" />
+                            </svg>
+                        </a>
+                        <div class="footer_nav">
+                            <ul class="nav_list">
+                                <li class="nav_item"><a href="">home</a></li>
+                                <li class="nav_item"><a href="">catalog</a></li>
+                                <li class="nav_item"><a href="">news</a></li>
+                                <li class="nav_item"><a href="">contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_right">
+                        <span class="contact">contact us</span>
+                        <div class="social_links">
+                            <a href=""> <svg class="instagram">
+                                    <use xlink:href="./img/sprite.svg#instagram" />
+                                </svg></a>
+                            <a href=""> <svg class="facebook">
+                                    <use xlink:href="./img/sprite.svg#facebook" />
+                                </svg></a>
+                            <a href=""> <svg class="pinterest">
+                                    <use xlink:href="./img/sprite.svg#pinterest" />
+                                </svg></a>
+                            <a href=""> <svg class="twitter">
+                                    <use xlink:href="./img/sprite.svg#twitter" />
+                                </svg></a>
+                            <a href=""> <svg class="youtube">
+                                    <use xlink:href="./img/sprite.svg#youtube" />
+                                </svg></a>
+                        </div>
+                        <span class="contact_phone">0800 300 4040</span>
+                    </div>
+                </div>
+                <span class="right">© Copyright 2022. All rights reserved.</span>
+
+            </div>
+        </div>
+
+
+
+    </main>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

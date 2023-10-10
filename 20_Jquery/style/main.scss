@@ -1,0 +1,609 @@
+@import "./_variables";
+
+@mixin item_text {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #F8F1EA;
+}
+
+@mixin view_button {
+    font-family: $primaryFontFamily;
+    padding: 15px 57px;
+    border: 2px solid #F8F1EA;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    color: #F8F1EA;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    color: $primaryFontColor;
+    font-family: $primaryFontFamily;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.container {
+    width: 100%;
+    max-width: 86%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        max-width: 96%;
+    }
+}
+
+
+.header {
+    padding: 23px 0;
+    background-color: #F8F1EA;
+    max-width: 100%;
+
+    @media screen and (max-width: 768px) {
+        padding: 15px 0;
+    }
+
+
+
+    .header_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .logo {
+            width: 100%;
+            max-width: 182px;
+
+            @media screen and (max-width: 768px) {
+                max-width: 168px;
+            }
+        }
+    }
+}
+
+
+
+
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav_button_wrapper {
+    width: 27px;
+    height: 27px;
+}
+
+.nav_item {
+    .nav_link {
+        padding: 28px 15px;
+        font-size: 20px;
+        font-weight: 500;
+
+        @media screen and (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        &:hover {
+            background-color: #F16A50;
+            color: #F8F1EA;
+        }
+    }
+}
+
+.nav_buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.slider_item {
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%);
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+}
+
+.item_content {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: absolute;
+    top: 120px;
+    right: 100px;
+    z-index: 3;
+
+    @media screen and (max-width: 768px) {
+        top: 60px;
+        right: 82px;
+        max-width: 210px;
+    }
+
+    .item_text {
+        @include item_text;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 26px;
+            text-align: center;
+        }
+    }
+
+    .content_button {
+        @include view_button;
+        color: #F8F1EA;
+        margin-top: 50px;
+
+        @media screen and (max-width: 768px) {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        &:hover {
+            border: 2px solid var(--tomato-light, #F16A50);
+            background-color: var(--tomato-light, #F16A50);
+        }
+    }
+}
+
+
+
+
+.guitars_section,
+.partners_section {
+    padding: 70px 0;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        padding: 50px 0;
+    }
+}
+
+.guitars_section {
+    width: 100%;
+}
+
+.section_header {
+    color: #000;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
+
+}
+
+.guitar_slider_wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.guitars_slider {
+    margin-bottom: 55px;
+
+    .slick-track {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            gap: 15px;
+        }
+    }
+
+
+    .guitar_item {
+        border: 1px solid #F8F1EA;
+
+
+        &:hover {
+            border: 1px solid #F16A50;
+
+        }
+
+
+        .status {
+            padding: 4px 5px;
+            background-color: #F16A50;
+            color: #F8F1EA;
+            text-transform: uppercase;
+            font-size: 10px;
+            display: block;
+            max-width: 60px;
+            text-align: center;
+        }
+
+        .sold {
+            background-color: #F8F1EA;
+            color: #000;
+        }
+    }
+}
+
+
+
+.guitar_prev_arrow {
+    max-width: 40px;
+    height: 74px;
+    position: absolute;
+    cursor: pointer;
+    top: 41%;
+    left: -60px;
+
+    @media screen and (max-width: 768px) {
+        width: 16px;
+        height: 30px;
+        left: -9px;
+    }
+
+}
+
+.guitar_next_arrow {
+    max-width: 40px;
+    height: 74px;
+    position: absolute;
+    cursor: pointer;
+    top: 41%;
+    right: -60px;
+
+    @media screen and (max-width: 768px) {
+        width: 16px;
+        height: 30px;
+        right: -15px;
+    }
+}
+
+.card {
+    padding: 0 10px 20px;
+    width: 100%;
+}
+
+.guitar_img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+.product_description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    .name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #000;
+        text-align: center;
+    }
+
+    .price {
+        font-size: 24px;
+        color: #000;
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+.view_button {
+    @include view_button;
+    color: #000;
+    border: 2px solid #000;
+    margin: 0 auto;
+    display: block;
+
+    &:hover {
+        border: 2px solid var(--tomato-light, #F16A50);
+        background-color: var(--tomato-light, #F16A50);
+        color: #F8F1EA;
+    }
+}
+
+.partners_section {
+    background-color: #F8F1EA;
+}
+
+.partners_slider_wrapper {
+    position: relative;
+
+    .slick-track {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+
+.prev_arrow {
+    max-width: 40px;
+    height: 74px;
+    position: absolute;
+    cursor: pointer;
+    left: -62px;
+    top: -5px;
+
+    @media screen and (max-width: 768px) {
+        width: 16px;
+        height: 30px;
+        left: -10px;
+        top: 23px;
+        bottom: 0;
+
+    }
+}
+
+.next_arrow {
+    max-width: 40px;
+    height: 74px;
+    position: absolute;
+    cursor: pointer;
+    right: -40px;
+    top: -5px;
+
+    @media screen and (max-width: 768px) {
+        width: 16px;
+        height: 30px;
+        right: -10px;
+        top: 23px;
+        bottom: 0;
+    }
+}
+
+.footer {
+    padding: 70px 0 10px;
+    background-color: #35312D;
+
+    @media screen and (max-width: 768px) {
+        padding: 50px 0 20px;
+    }
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+
+}
+
+.footer_left {
+    @media screen and (max-width: 768px) {
+        display: flex;
+        gap: 126px;
+    }
+}
+
+.footer_logo {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 35px;
+}
+
+.footer_nav>.nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .nav_item {
+        color: var(--brown-light, #F8F1EA);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+
+        &:hover {
+            color: #F16A50;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.contact,
+.contact_phone {
+    color: var(--brown-light, #F8F1EA);
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 50px;
+    display: block;
+
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+        margin-bottom: 26px;
+    }
+}
+
+.contact_phone {
+    margin-bottom: 0;
+}
+
+
+
+
+.social_links {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 35px;
+
+    svg {
+        &:hover {
+            --p2: #F16A50;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.instagram {
+    width: 30px;
+    height: 30px;
+}
+
+.facebook {
+    width: 15px;
+    height: 30px;
+}
+
+.pinterest {
+    width: 23px;
+    height: 30px;
+}
+
+.twitter {
+    width: 36px;
+    height: 30px;
+}
+
+.youtube {
+    width: 40px;
+    height: 30px;
+}
+
+.right {
+    color: var(--brown-light, #F8F1EA);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+
+/* Dots */
+
+.slick-dots {
+    position: absolute;
+    bottom: 50px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        bottom: 20px;
+    }
+
+}
+
+.slick-dots li {
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .75;
+    color: #F8F1EAB2;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #F16A50;
+}
