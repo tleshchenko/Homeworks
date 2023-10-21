@@ -1,0 +1,54 @@
+body {
+    width: 100%;
+    max-width: 3840px;
+    background-image: url(../img/lines_stripes_dark_119835_3840x2400.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 100px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-family: Helvetica;
+    font-size: 45px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.buttons_wrapper {
+    padding: 50px 25px;
+    background-color: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(50px);
+    border-radius: 15px;
+
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.75);
+    padding: 15px 25px;
+    color: #fff;
+    background-color: lightslategray ;
+    font-family: Helvetica;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+}
