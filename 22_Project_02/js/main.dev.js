@@ -14,20 +14,39 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
+  var _ref;
+
   $('.news_slider').slick({
     dots: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     speed: 1000,
+    infinite: true,
     prevArrow: '.prev_arrow',
     nextArrow: '.next_arrow',
-    responsive: [{
+    responsive: [(_ref = {
       breakpoint: 968,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        variableWidth: true
       }
-    }]
+    }, _defineProperty(_ref, "breakpoint", 768), _defineProperty(_ref, "settings", {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      variableWidth: true
+    }), _defineProperty(_ref, "breakpoint", 568), _defineProperty(_ref, "settings", {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true,
+      arrows: false
+    }), _defineProperty(_ref, "breakpoint", 320), _defineProperty(_ref, "settings", {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false
+    }), _ref)]
   });
 });
 lightGallery(document.querySelector('.grid_container'), _defineProperty({
@@ -171,3 +190,24 @@ function validateForm(event) {
 window.nameInput.addEventListener('input', checkNamelLenght);
 document.addEventListener('DOMContentLoaded', checkNamelLenght);
 window.checkForm.addEventListener('submit', validateForm);
+
+function hamburgerWorks() {
+  document.querySelector('.navigation').classList.add('active');
+}
+
+function toggleMenu(e) {
+  e.preventDefault();
+  document.querySelector('.hamburger').classList.toggle('is-active');
+  document.querySelector('.navigation').classList.toggle('active');
+}
+
+document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+var navItems = Array.from(document.querySelectorAll('.nav_item'));
+
+function handleClick(event) {
+  document.querySelector('.navigation').classList.remove('active');
+}
+
+navItems.forEach(function (navItem) {
+  navItem.addEventListener('click', handleClick);
+});

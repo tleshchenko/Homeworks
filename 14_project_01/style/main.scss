@@ -255,8 +255,8 @@ html {
 }
 
 .navigation {
-    display: flex;
     align-items: center;
+    gap: 110px;
 
     @media screen and (max-width: 968px) {
         position: fixed;

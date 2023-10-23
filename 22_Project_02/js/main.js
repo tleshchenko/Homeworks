@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function () {
     $('.header_slider').slick({
         dots: true,
@@ -16,20 +13,44 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.news_slider').slick({
         dots: true,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         speed: 1000,
+        infinite: true,
         prevArrow: '.prev_arrow',
         nextArrow: '.next_arrow',
-        responsive: [
-            {
-                breakpoint: 968,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            }
-        ]
+        responsive: [{
+            breakpoint: 968,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                variableWidth: true
+
+            },
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                adaptiveHeight: true,
+                variableWidth: true
+
+            },
+            breakpoint: 568,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                variableWidth: true,
+                arrows: false,
+
+            },
+            breakpoint: 320,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+            },
+        }]
     });
 });
 
@@ -172,3 +193,26 @@ async function validateForm(event) {
 window.nameInput.addEventListener('input', checkNamelLenght);
 document.addEventListener('DOMContentLoaded', checkNamelLenght);
 window.checkForm.addEventListener('submit', validateForm);
+
+function hamburgerWorks() {
+    document.querySelector('.navigation').classList.add('active')
+}
+
+function toggleMenu(e)  {
+    e.preventDefault ();
+
+    document.querySelector('.hamburger').classList.toggle('is-active');
+    document.querySelector('.navigation').classList.toggle('active');
+}
+
+document.querySelector('.hamburger').addEventListener('click', toggleMenu)
+
+
+const navItems = Array.from(document.querySelectorAll('.nav_item'));
+
+function handleClick(event) {
+    document.querySelector('.navigation').classList.remove('active');
+}
+navItems.forEach(navItem => {
+    navItem.addEventListener('click', handleClick);
+});
